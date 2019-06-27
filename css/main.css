@@ -153,11 +153,11 @@ h1 {
 }
 
 .shelf.owned:before {
-    content: 'Os Serodios';
+    content: 'Os Serodios 1-6';
 }
 
 .shelf:nth-child(3n).owned:before {
-    content: 'Proximamente...';
+    content: 'Os Serodios 7-12';
 }
 
 .shelf h2 {
