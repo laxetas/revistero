@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../js/turn.min.js"></script>
+
+<style type="text/css">
+body{
+	background:#ccc;
+}
+#magazine{
+	width:1152px;
+	height:752px;
+}
+#magazine .turn-page{
+	background-color:#ccc;
+	background-size:100% 100%;
+}
+</style>
+</head>
+<body>
+
+<div id="magazine">
+	<div style="background-image:url(pages/p_page-0001.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0002.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0003.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0004.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0005.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0006.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0007.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0008.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0009.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0010.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0011.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0012.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0013.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0014.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0015.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0016.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0017.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0018.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0019.jpg);"></div>
+	<div style="background-image:url(pages/p_page-0020.jpg);"></div>
+	
+	
+	
+	
+</div>
+
+
+<script type="text/javascript">
+
+	$(window).ready(function() {
+		$('#magazine').turn({
+							display: 'double',
+							acceleration: true,
+							gradients: !$.isTouch,
+							elevation:50,
+							when: {
+								turned: function(e, page) {
+									/*console.log('Current view: ', $(this).turn('view'));*/
+								}
+							}
+						});
+	});
+	
+	
+	$(window).bind('keydown', function(e){
+		
+		if (e.keyCode==37)
+			$('#magazine').turn('previous');
+		else if (e.keyCode==39)
+			$('#magazine').turn('next');
+			
+	});
+
+</script>
+
+</body>
+</html>
